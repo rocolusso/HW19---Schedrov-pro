@@ -25,24 +25,141 @@ Callback функция exponentiation
 
 —————
 
+*Дополнительные задания
+
+В качестве дополнительного задания можете написать еще несколько callback функций,
+которые будут производить другие вычисления
+
+Функции будут работать аналогично как и первая «Callback функция exponentiation»,
+которая описана выше, но отличаться будет только пункт 2 (вычисление, которое она производит) и название функции
+
+Ниже приведено название доп. Callback функций и то что они должны делать
+
+Callback функция multiplay
+
+1. Тоже смое, что и в Callback функции exponentiation
+
+2. В теле функции нам нужно умножить ( * ) первый аргумент на второй аргумент и записать результат этой операции в переменную
+
+3. Тоже смое, что и в Callback функции exponentiation
+
+Callback функция division
+
+1. Тоже смое, что и в Callback функции exponentiation
+
+2. В теле функции нам нужно поделить ( / ) первый аргумент на второй аргумент и записать результат этой операции в переменную
+
+3. Тоже смое, что и в Callback функции exponentiation
+
+Callback функция modulo
+
+1. Тоже смое, что и в Callback функции exponentiation
+
+2. В теле функции нам нужно вычислить остаток от деления ( % ) первого аргумента на второй аргумент и записать результат этой операции в переменную
+
+3. Тоже смое, что и в Callback функции exponentiation
+
 */
 
+//
+// Основное задание
 
 let num = null;
 let powNum = null;
-let callbackResult = null;
+let callbackExpoResult = null;
 
 
-function mainFunction(callback){
-    num = +prompt('Enter number');
-    powNum = +prompt('Enter pow');
-    alert(`Number: ${num} \nPow: ${powNum}`);
-    callback(num,powNum);
+function mainFunction(callbackExpo){
+
+       num = +prompt('Enter number');
+       powNum = +prompt('Enter pow');
+       alert(`Number: ${num} \nPow: ${powNum}`);
+       return  callbackExpo(num,powNum);
+
 }
 
-function callback(num,powNum){
-    callbackResult = Math.pow(num,powNum);
-    return alert(`${num} ** ${powNum} = ${callbackResult}`);
+function callbackExpo(num,powNum){
+    callbackExpoResult = Math.pow(num,powNum);
+    return alert(`${num} ** ${powNum} = ${callbackExpoResult}`);
 }
 
-mainFunction(callback);
+mainFunction(callbackExpo);
+
+
+
+//
+//
+// Дополнительное задание
+//
+
+
+
+//
+// let num = null;
+// let powNum = null;
+// let callbackExpoResult = null;
+//
+//
+// let firstNum = null;
+// let secondNum = null;
+// let callbackMultResult = null;
+//
+// let callbackDivResult = null;
+//
+// let callbackModuloResult = null
+//
+//
+//
+// function mainFunction(){
+//
+//     if ( arguments[0] === callbackExpo){
+//         num = +prompt('Enter number');
+//         powNum = +prompt('Enter pow');
+//         alert(`Number: ${num} \nPow: ${powNum}`);
+//         return  callbackExpo(num,powNum);
+//     }
+//
+//     if (arguments[0] === callbackMultiply){
+//         firstNum = +prompt('Enter first number');
+//         secondNum = +prompt('Enter second number');
+//         alert(`Number 1: ${firstNum} \nNumber 2: ${secondNum}`);
+//         return   callbackMultiply(firstNum,secondNum);
+//     }
+//
+//     if (arguments[0] === callbackDivision){
+//         firstNum = +prompt('Enter first number');
+//         secondNum = +prompt('Enter second number');
+//         alert(`Number 1: ${firstNum} \nNumber 2: ${secondNum}`);
+//         return   callbackDivision(firstNum,secondNum);
+//     }
+//
+//     if (arguments[0] === callbackModulo){
+//         firstNum = +prompt('Enter first number');
+//         secondNum = +prompt('Enter second number');
+//         alert(`Number 1: ${firstNum} \nNumber 2: ${secondNum}`);
+//         return   callbackModulo(firstNum,secondNum);
+//     }
+//
+// }
+//
+// function callbackExpo(num,powNum){
+//     callbackExpoResult = Math.pow(num,powNum);
+//     return alert(`${num} ** ${powNum} = ${callbackExpoResult}`);
+// }
+//
+// function callbackMultiply(firstNum,secondNum){
+//     callbackMultResult = firstNum * secondNum;
+//     return alert(`${firstNum} * ${secondNum} = ${callbackMultResult}`);
+// }
+//
+// function callbackDivision(firstNum,secondNum){
+//     callbackDivResult = firstNum / secondNum;
+//     return alert(`${firstNum} / ${secondNum} = ${callbackDivResult}`);
+// }
+//
+// function callbackModulo(firstNum,secondNum){
+//     callbackModuloResult = firstNum % secondNum;
+//     return alert(`${firstNum} % ${secondNum} = ${callbackModuloResult}`);
+// }
+//
+// mainFunction(callbackModulo);  // mainfunction принимает один из коллбэков выше
